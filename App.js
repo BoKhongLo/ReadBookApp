@@ -1,15 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
-import HomePage from './src/Screens/HomePage';
-import AppStyle from './src/style';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
 
-import data from './assets/data/books';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import HomePage from "./src/Screens/HomePage";
+import BookInformation from "./src/Screens/BookInformation";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView style={AppStyle.screens.container}>
-        <HomePage data={data} />
-        <StatusBar style="auto" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          options={{ headerShown: false }}
+          component={HomePage}
+        />
+        <Stack.Screen
+          name="BookInfo"
+          options={({ route }) => ({
+            headerShown: true,
+            headerTransparent: true, // Đặt header trong suốt
+            headerTitleStyle: [{ color: "white",fontWeight:'600',fontSize:23}], // Tuỳ chỉnh màu sắc của tiêu đề
+            title: route.params.book.title, // Thiết lập tiêu đề từ book.title
+            headerTintColor:'white'
+          })}
+          component={BookInformation}
+        />
+      </Stack.Navigator>
+      <StatusBar style="auto" />
+    </NavigationContainer>
   );
 }

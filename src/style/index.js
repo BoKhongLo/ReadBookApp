@@ -1,10 +1,10 @@
 import button from './button';
-import theme from './theme';
+import getTheme from './theme';
 import text from './text';
 import screens from './screens';
 
 const AppStyle = {
-    theme,
+    getTheme,
     button,
     text,
     screens

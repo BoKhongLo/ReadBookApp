@@ -3,18 +3,18 @@ import React from 'react'
 import ItemBookCover from "./ItemBookCover";
 import AppStyle from "../style";
 
-
-
-const renderBook = (data) => {
+const renderBook = (data,darkModeEnabled,) => {
     return (
+        <>
         <FlatList
             data={data}
-            renderItem={({ item }) => <ItemBookCover item={item} />}
+            renderItem={({ item }) => <ItemBookCover item={item} darkModeEnabled={darkModeEnabled}/>}
             keyExtractor={(item, index) => index.toString()}
             showsVerticalScrollIndicator={false}
             numColumns={2}
             columnWrapperStyle={AppStyle.screens.columnWrapper}
         />
+        </>
     );
 };
 

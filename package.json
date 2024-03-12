@@ -9,13 +9,22 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
     "@expo-google-fonts/raleway": "^0.2.3",
+    "@react-navigation/native": "^6.1.10",
+    "@react-navigation/stack": "^6.3.21",
     "@types/react": "~18.2.45",
-    "expo": "~50.0.7",
+    "expo": "^49.0.23",
+    "expo-linear-gradient": "~12.3.0",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-native": "^0.73.4",
-    "typescript": "^5.3.0"
+    "react-native-blur": "^3.2.2",
+    "react-native-gesture-handler": "~2.14.0",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-ui-kitten": "^4.4.1",
+    "typescript": "^5.3.0",
+    "expo-blur": "~12.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

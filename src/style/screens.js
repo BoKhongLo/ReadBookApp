@@ -7,8 +7,8 @@ const windowHeight = Dimensions.get("window").height;
 const screens = StyleSheet.create({
   container: {
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 25 : 0,
-    backgroundColor: "#EEEEEE",
+    paddingTop: Platform.OS === "android" ? 50 : 0,
+    flex:1
   },
   header: {
     height: windowHeight * 0.08,
@@ -21,24 +21,31 @@ const screens = StyleSheet.create({
   content: {
     flex: 1,
     width: windowWidth,
-    backgroundColor: "white",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     elevation: 10,
   },
   contentLayout: {
     marginTop: 30,
-    marginHorizontal: 20,
+    borderRadius:20
   },
   columnWrapper: {
     justifyContent: "space-around",
-    paddingBottom: 10,
   },
   item: {
     marginHorizontal: 10,
     marginVertical: 8,
     borderRadius: 15,
   },
+  imgContaiber: {
+    alignItems: "center",
+    zIndex: 1,
+    marginTop: -180,
+  },
+  informationContainer:{
+    marginHorizontal:10,
+    marginVertical:10
+  }
 });
 
 export default screens;
